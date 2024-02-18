@@ -1,0 +1,12 @@
+.font-raleway {
+  font-family: "Raleway", sans-serif;
+}
+.font-inter {
+  font-family: "Inter", sans-serif;
+}
+.banner{
+    background-image: url(images/banner.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
