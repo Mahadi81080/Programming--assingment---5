@@ -12,7 +12,7 @@ for (const ticket of allTicket) {
     const selectedContainer = document.getElementById(
       "selected-place-container"
     );
-    e.target.style.backgroundColor = "green";
+    e.target.style.backgroundColor = "#22c55e";
     const tr = document.createElement("tr");
     const td = document.createElement("td");
     td.innerText = ticketName;
@@ -53,6 +53,14 @@ function setInnerText(id, value) {
 const btn = document.getElementById("apply-btn");
 btn.addEventListener("click", function () {
   const selectedPlace = document.getElementById("selected-placer");
+  const existingH3 = selectedPlace.querySelector("h3");
+  const existingP = selectedPlace.querySelector("p");
+  if (existingH3) {
+    existingH3.remove();
+  }
+  if (existingP) {
+    existingP.remove();
+  }
   const h3 = document.createElement("h3");
   h3.innerText = "Discount Price";
   const p = document.createElement("p");
@@ -63,13 +71,16 @@ btn.addEventListener("click", function () {
       discountAmount = sum2 * 0.15;
       const totalpay = sum1 - discountAmount;
       setInnerText("grand-total", totalpay);
+      document.getElementById("input-field").disabled = true;
     } else if (cuponElement === "Couple 20") {
       discountAmount = sum2 * 0.2;
       const totalpay = sum1 - discountAmount;
       setInnerText("grand-total", totalpay);
+      document.getElementById("input-field").disabled = true;
     } else {
       alert("Sorry, you submitted the wrong coupon code");
     }
+   
   } else {
     alert("Please buy at least 4 tickets");
   }
