@@ -4,6 +4,9 @@
 .font-inter {
   font-family: "Inter", sans-serif;
 }
+.hide{
+  display: none;
+}
 .banner{
     background-image: url(images/banner.png);
     background-repeat: no-repeat;
